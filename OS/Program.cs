@@ -228,7 +228,7 @@ class ZIP
     public void Cereate_ZIP()
     {
 
-
+        Directory.CreateDirectory("./start");
         ZipFile.CreateFromDirectory(path, path_z);
 
         Console.WriteLine("Выберите файл: 1-текстовый, 2-json, 3-xml\n");
@@ -270,6 +270,8 @@ class ZIP
                         Console.WriteLine($"Время создания: {f.CreationTime}");
                         Console.WriteLine($"Размер: {f.Length}");
                     }
+                    
+                    
 
 
 
@@ -406,6 +408,7 @@ class del
         File.Delete("./file.json");
         File.Delete("./people.xml");
         File.Delete("./arc.zip");
+        Directory.Delete("./start"); 
     }
 
 
@@ -435,7 +438,7 @@ class print{
             show();
            
             a = Console.ReadLine();
-            Console.WriteLine("Для продолжения  нажмите enter");
+        
         b: switch (a)
                 {
                     case "1":
@@ -503,7 +506,8 @@ class print{
                   
 
             }
-         
+            Console.WriteLine("Для продолжения  нажмите enter");
+            Console.WriteLine("\n");
             if ( a != "0")
                 
             {
